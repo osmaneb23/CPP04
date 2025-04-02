@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 17:17:10 by obouayed          #+#    #+#             */
-/*   Updated: 2025/03/31 17:17:21 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/04/03 01:25:10 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 
 class WrongAnimal
 {
+    protected:
+        std::string _type;
+
     public:
         WrongAnimal();
         WrongAnimal(WrongAnimal const &src);

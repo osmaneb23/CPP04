@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 17:16:54 by obouayed          #+#    #+#             */
-/*   Updated: 2025/03/31 17:17:06 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/04/03 01:20:22 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Dog : public Animal
         Dog();
         Dog(Dog const &src);
         Dog &operator=(const Dog &rhs);
+        // Virtual here is not necessary
         virtual ~Dog();
         void makeSound() const;
 };
