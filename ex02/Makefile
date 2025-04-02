@@ -6,7 +6,7 @@
 #    By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/01 10:00:00 by obouayed          #+#    #+#              #
-#    Updated: 2025/03/31 17:05:34 by obouayed         ###   ########.fr        #
+#    Updated: 2025/04/03 00:48:26 by obouayed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJDIR = obj
 INCDIR = includes
 
 # Header files
-INCLUDES = $(INCDIR)/AAnimal.hpp \
+INCLUDES = $(INCDIR)/Animal.hpp \
            $(INCDIR)/Dog.hpp \
            $(INCDIR)/Cat.hpp \
            $(INCDIR)/Brain.hpp \
@@ -31,7 +31,7 @@ INCLUDES = $(INCDIR)/AAnimal.hpp \
 
 # Source files
 SRCS = $(SRCDIR)/main.cpp \
-       $(SRCDIR)/AAnimal.cpp \
+       $(SRCDIR)/Animal.cpp \
        $(SRCDIR)/Dog.cpp \
        $(SRCDIR)/Cat.cpp \
        $(SRCDIR)/Brain.cpp \
