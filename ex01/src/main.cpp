@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 03:00:00 by obouayed          #+#    #+#             */
-/*   Updated: 2025/04/03 02:45:46 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/04/03 16:20:27 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void testWrongAnimal()
     const WrongAnimal* wrongAnimal = new WrongAnimal();
     const WrongAnimal* wrongCat = new WrongCat();
     
+    std::cout << "WrongAnimal type: " << wrongAnimal->getType() << std::endl;
     std::cout << "WrongCat type: " << wrongCat->getType() << std::endl;
     
     wrongCat->makeSound();

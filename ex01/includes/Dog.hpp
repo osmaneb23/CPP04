@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 17:16:54 by obouayed          #+#    #+#             */
-/*   Updated: 2025/04/03 02:25:35 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/04/03 16:19:52 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ class Dog : public Animal
         Dog &operator=(const Dog &rhs);
         // Virtual here is not necessary
         virtual ~Dog();
+        
         void makeSound() const;
+        Brain *getBrain() const;
 };
 
 #endif

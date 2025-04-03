@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 01:23:18 by obouayed          #+#    #+#             */
-/*   Updated: 2025/04/03 02:50:21 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/04/03 16:20:00 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,9 @@ Cat::~Cat()
 void Cat::makeSound() const
 {
 	std::cout << "Miaouuuuu" << std::endl;
+}
+
+Brain *Cat::getBrain() const
+{
+	return (this->_brain);
 }

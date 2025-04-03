@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 17:16:13 by obouayed          #+#    #+#             */
-/*   Updated: 2025/04/03 02:25:25 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/04/03 16:19:42 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ class Cat : public Animal
         Cat &operator=(const Cat &rhs);
         // Virtual here is not necessary
         virtual ~Cat();
+        
         void makeSound() const;
+        Brain *getBrain() const;
 };
 
 #endif

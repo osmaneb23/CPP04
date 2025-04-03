@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 01:24:03 by obouayed          #+#    #+#             */
-/*   Updated: 2025/04/03 02:50:28 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/04/03 16:20:09 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,9 @@ Dog::~Dog()
 void Dog::makeSound() const
 {
 	std::cout << "Woof Woof" << std::endl;
+}
+
+Brain *Dog::getBrain() const
+{
+	return (this->_brain);
 }
