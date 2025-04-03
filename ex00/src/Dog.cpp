@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 01:24:03 by obouayed          #+#    #+#             */
-/*   Updated: 2025/04/03 01:24:14 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/04/03 01:38:46 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Dog::Dog() : Animal("Dog")
 {
-	std::cout << "Dog default constructor called" << std::endl;
+	std::cout << "Dog constructor called" << std::endl;
 }
 
 Dog::Dog(Dog const &src) : Animal(src)
@@ -38,5 +38,5 @@ Dog::~Dog()
 
 void Dog::makeSound() const
 {
-	std::cout << "Dog barks" << std::endl;
+	std::cout << "Woof Woof" << std::endl;
 }

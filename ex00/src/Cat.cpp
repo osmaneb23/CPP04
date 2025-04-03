@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 01:23:18 by obouayed          #+#    #+#             */
-/*   Updated: 2025/04/03 01:23:39 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/04/03 01:38:40 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat::Cat() : Animal("Cat")
 {
-	std::cout << "Cat default constructor called" << std::endl;
+	std::cout << "Cat constructor called" << std::endl;
 }
 
 Cat::Cat(Cat const &src) : Animal(src)
@@ -38,5 +38,5 @@ Cat::~Cat()
 
 void Cat::makeSound() const
 {
-	std::cout << "Cat meows" << std::endl;
+	std::cout << "Miaouuuuu" << std::endl;
 }

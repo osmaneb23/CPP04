@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 17:14:19 by obouayed          #+#    #+#             */
-/*   Updated: 2025/04/03 01:25:02 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/04/03 01:42:36 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ class Animal
         Animal &operator=(const Animal &rhs);
         // Adding virtual make all the derived classes destructors virtual by default
         virtual ~Animal();
+        
         std::string getType() const;
-        virtual void makeSound() const = 0;
+        virtual void makeSound() const;
 };
 
 #endif
