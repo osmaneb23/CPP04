@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 03:00:00 by obouayed          #+#    #+#             */
-/*   Updated: 2025/04/03 16:20:27 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/04/07 17:59:21 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,33 +63,64 @@ void testDeepCopy()
     std::cout << "--- Dog deep copy test ---" << std::endl;
     Dog* originalDog = new Dog();
     
-    // To properly test deep copy, we would need to add getIdea and setIdea methods to Dog
-    // But even without those, we can test basic functionality
-    std::cout << "Setting ideas in original dog's brain..." << std::endl;
+    // Set some ideas in the original dog
+    originalDog->getBrain()->setIdea(0, "I want to chase cats");
+    originalDog->getBrain()->setIdea(1, "I need to bark at mailman");
+    originalDog->getBrain()->setIdea(2, "Squirrels are suspicious");
     
-    // Create a copy of the Dog
+    std::cout << "Original dog ideas:" << std::endl;
+    std::cout << "Idea 0: " << originalDog->getBrain()->getIdea(0) << std::endl;
+    std::cout << "Idea 1: " << originalDog->getBrain()->getIdea(1) << std::endl;
+    std::cout << "Brain address: " << originalDog->getBrain() << std::endl;
+    
+    // Create a copy using copy constructor
     Dog* copyDog = new Dog(*originalDog);
-    std::cout << "Copy constructor called. If deep copy works, dogs should have different brain addresses" << std::endl;
     
-    // Delete the original - if copy is shallow, this would cause problems when accessing copyDog's brain
+    std::cout << "\nCopy dog after creation:" << std::endl;
+    std::cout << "Idea 0: " << copyDog->getBrain()->getIdea(0) << std::endl;
+    std::cout << "Idea 1: " << copyDog->getBrain()->getIdea(1) << std::endl;
+    std::cout << "Brain address: " << copyDog->getBrain() << std::endl;
+    
+    // Modify original dog's idea
+    originalDog->getBrain()->setIdea(1, "I should dig a hole in the garden");
+    
+    std::cout << "\nAfter modifying original dog's idea:" << std::endl;
+    std::cout << "Original dog idea 1: " << originalDog->getBrain()->getIdea(1) << std::endl;
+    std::cout << "Copy dog idea 1: " << copyDog->getBrain()->getIdea(1) << std::endl;
+    
+    // Clean up
     delete originalDog;
-    std::cout << "Original dog deleted. If copy is shallow, using copyDog now would cause issues." << std::endl;
+    std::cout << "\nOriginal dog deleted. Copy should still work if deep copy was successful." << std::endl;
     
-    // Use the copy to prove it's still valid
-    copyDog->makeSound();
+    // Verify copy dog still works
+    std::cout << "Copy dog ideas after original deletion:" << std::endl;
+    std::cout << "Idea 0: " << copyDog->getBrain()->getIdea(0) << std::endl;
+    std::cout << "Idea 1: " << copyDog->getBrain()->getIdea(1) << std::endl;
     
     delete copyDog;
     
-    // Test deep copy for Cat
+    // Test deep copy for Cat with assignment operator
     std::cout << "\n--- Cat deep copy test ---" << std::endl;
     Cat originalCat;
-    Cat copyCat = originalCat; // Copy using assignment operator
     
-    std::cout << "Original cat and copy cat created." << std::endl;
-    std::cout << "If deep copy works, both cats should work independently." << std::endl;
+    // Set some ideas in the original cat
+    originalCat.getBrain()->setIdea(0, "I should knock things off the table");
+    originalCat.getBrain()->setIdea(1, "Humans exist to serve me");
     
-    originalCat.makeSound();
-    copyCat.makeSound();
+    std::cout << "Original cat brain address: " << originalCat.getBrain() << std::endl;
+    
+    // Create a copy using assignment operator
+    Cat copyCat = originalCat;
+    
+    std::cout << "Copy cat brain address: " << copyCat.getBrain() << std::endl;
+    std::cout << "If deep copy worked, addresses should be different" << std::endl;
+    
+    // Modify copy cat's idea
+    copyCat.getBrain()->setIdea(1, "I should demand more food");
+    
+    std::cout << "\nAfter modifying copy cat's idea:" << std::endl;
+    std::cout << "Original cat idea 1: " << originalCat.getBrain()->getIdea(1) << std::endl;
+    std::cout << "Copy cat idea 1: " << copyCat.getBrain()->getIdea(1) << std::endl;
 }
 
 void testAnimalArray() 
@@ -120,23 +151,11 @@ void testAnimalArray()
         delete animals[i];
 }
 
-void testLeakCheck() 
-{
-    std::cout << "\n===== LEAK CHECK TEST (SUBJECT EXAMPLE) =====\n" << std::endl;
-    
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    
-    delete j;
-    delete i;
-}
-
 int main() 
 {
     testBasicFunctionality();
     testWrongAnimal();
     testDeepCopy();
     testAnimalArray();
-    testLeakCheck();    
     return 0;
 }

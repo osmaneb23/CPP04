@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 01:24:03 by obouayed          #+#    #+#             */
-/*   Updated: 2025/04/03 16:20:09 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/04/07 18:34:40 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Dog::Dog() : Animal("Dog")
 Dog::Dog(Dog const &src) : Animal(src)
 {
 	std::cout << "Dog copy constructor called" << std::endl;
-	this->_brain = new Brain();
+	this->_brain = new Brain(*src._brain);
 	*this = src;
 }
 

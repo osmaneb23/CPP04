@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 01:23:18 by obouayed          #+#    #+#             */
-/*   Updated: 2025/04/03 16:20:00 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/04/07 18:47:35 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ Cat::Cat() : Animal("Cat")
 Cat::Cat(Cat const &src) : Animal(src)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
-	this->_brain = new Brain();
+	// hAVE TO FIX THAAAAAAAAAAAAAAAAAAT
+	this->_brain = new Brain(*src._brain);
 	*this = src;
 }
 
